@@ -2,9 +2,11 @@ pipeline {
     agent any
     stages {
         stage('Get Vault Token') {
-            //agent {
-            //    label 'windows'
-            //}
+            agent {
+                docker {
+                    image "chef/chef"
+                }
+            }
             steps {
                 /*script {
                     VAULT_TOKEN = powershell(returnStdout:true, script: '''
