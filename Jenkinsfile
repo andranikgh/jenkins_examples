@@ -10,14 +10,15 @@ pipeline {
             }
             steps {
                 sh "echo Hello world"
-                /*script {
-                    VAULT_TOKEN = powershell(returnStdout:true, script: '''
+                script {
+                    VAULT_TOKEN="HELLO"
+                /*    VAULT_TOKEN = powershell(returnStdout:true, script: '''
                     $vaultToken = (Invoke-RestMethod -Method Post -Uri "$env:VAULT_URL/v1/auth/userpass/login/$env:VAULT_CRED_USR" -ContentType "application/json" -Body "{`"password`": `"$env:VAULT_CRED_PSW`"}").auth.client_token
                     return $vaultToken
-                    ''').trim()
+                    ''').trim()*/
                     assert VAULT_TOKEN != null
                     assert VAULT_TOKEN != ''
-                }*/
+                }
             }
             post {
                 success {
