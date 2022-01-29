@@ -1,14 +1,3 @@
-I have a Jenkins Pipeline using Syntax
-It uses a Docker Agent
-Chef is installed on that agent
-It has to connect to the chef server in the company
-And bring the environment values to the Jenkins and store as a json file
-
-Start of code - You can use the below in your Jenkins pipeline. to test
-
-
-you can start using the following
-
 pipeline {
     stages {
         stage('Get Vault Token') {
