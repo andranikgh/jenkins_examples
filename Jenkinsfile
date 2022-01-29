@@ -2,12 +2,11 @@ pipeline {
     agent any
     stages {
         stage('Get Vault Token') {
-            agent {
-                docker {
-                    image "chef/chef"
-                }
-            }
+            //agent {
+            //    label 'windows'
+            //}
             steps {
+                sh "echo Hello wold"
                 /*script {
                     VAULT_TOKEN = powershell(returnStdout:true, script: '''
                     $vaultToken = (Invoke-RestMethod -Method Post -Uri "$env:VAULT_URL/v1/auth/userpass/login/$env:VAULT_CRED_USR" -ContentType "application/json" -Body "{`"password`": `"$env:VAULT_CRED_PSW`"}").auth.client_token
