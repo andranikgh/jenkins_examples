@@ -2,9 +2,12 @@ pipeline {
     agent any
     stages {
         stage('Get Vault Token') {
-            //agent {
-            //    label 'windows'
-            //}
+            agent {
+                //label 'windows'
+                docker {
+                    image "chef"
+                }
+            }
             steps {
                 sh "echo Hello world"
                 /*script {
