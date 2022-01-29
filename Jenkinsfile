@@ -5,7 +5,7 @@ pipeline {
             agent {
                 //label 'windows'
                 docker {
-                    image "chef"
+                    image "chef/chef"
                 }
             }
             steps {
