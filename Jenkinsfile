@@ -18,7 +18,8 @@ pipeline {
                 echo "DISABLE_AUTH is ${DISABLE_AUTH}"
                 sh 'printenv'
             }
-
+        }
+    }
 
 
 
@@ -38,14 +39,12 @@ pipeline {
                     //assert VAULT_TOKEN != ''
                 }
             }*/
-            post {
-                success {
-                    println(' >>>>> SUCCESS: TOKEN Generated!')
-                }
-                failure {
-                    println(' >>>>> FAILURE: TOKEN not generated!')
-                }
-            }
+    post {
+        success {
+            println(' >>>>> SUCCESS: TOKEN Generated!')
+        }
+        failure {
+            println(' >>>>> FAILURE: TOKEN not generated!')
         }
     }
 }
