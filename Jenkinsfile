@@ -5,11 +5,11 @@ pipeline {
             agent {
                 //label 'windows'
                 docker {
-                    image "ubuntu"
+                    image "chef/chef"
                 }
             }
             steps {
-                sh "apt install culr"
+                sh "apk add curl"
                 sh "echo Hello world"
                 script {
                     VAULT_TOKEN=sh("curl -X GET     --header \"X-Vault-Token: s.uYRC9SO5tvwUitOXkNcdMBOx\"     http://127.0.0.1:8200/v1/sys/mounts ")
