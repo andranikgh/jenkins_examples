@@ -18,7 +18,8 @@ pipeline {
                     return $vaultToken
                     ''').trim()*/
                     ENV=$(sh "pritnenv")
-                    echo $ENV > a.json
+                    sh "echo $ENV > a.json"
+                    sh "echo $ENV"
                     //assert VAULT_TOKEN != null
                     //assert VAULT_TOKEN != ''
                 }
