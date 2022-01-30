@@ -17,9 +17,7 @@ pipeline {
                     $vaultToken = (Invoke-RestMethod -Method Post -Uri "$env:VAULT_URL/v1/auth/userpass/login/$env:VAULT_CRED_USR" -ContentType "application/json" -Body "{`"password`": `"$env:VAULT_CRED_PSW`"}").auth.client_token
                     return $vaultToken
                     ''').trim()*/
-                    ENV=$(sh "pritnenv")
-                    sh "echo $ENV > a.json"
-                    sh "echo $ENV"
+                    sh "pritnenv"
                     //assert VAULT_TOKEN != null
                     //assert VAULT_TOKEN != ''
                 }
